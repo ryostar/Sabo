@@ -49,7 +49,7 @@
     },
     "STREAM_URL": {
       "description": "URL of Radio station or Youtube live video url to stream with /radio command",
-      "value": "",
+      "value": "https://youtu.be/zcrUCvBD16k",
       "required": false
 }
   },
