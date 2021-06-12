@@ -59,13 +59,13 @@ def youtube(url: str) -> str:
 
     if duration > DURATION_LIMIT:
         raise DurationLimitError(
-            f"❌ Videos longer than {DURATION_LIMIT} minute(s) aren't allowed, the provided video is {duration} minute(s)"
+            f"❌ Video dài hơn {DURATION_LIMIT} minute(s) không được phép, video được cung cấp là {duration} minute(s)"
         )
     try:
         ydl.download([url])
     except:
         raise DurationLimitError(
-            f"❌ Videos longer than {DURATION_LIMIT} minute(s) aren't allowed, the provided video is {duration} minute(s)"
+            f"❌ Video dài hơn {DURATION_LIMIT} minute(s) không được phép, video được cung cấp là {duration} minute(s)"
         )
     return path.join("downloads", f"{info['id']}.{info['ext']}")
 
@@ -76,10 +76,10 @@ class MusicPlayer(object):
 
     async def send_playlist(self):
         if not playlist:
-            pl = f"{emoji.NO_ENTRY} Empty playlist"
+            pl = f"{emoji.NO_ENTRY} Danh sách phát trống"
         else:       
-            pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n" + "\n".join([
-                f"**{i}**. **🎸{x[1]}**\n   👤**Requested by:** {x[4]}\n"
+            pl = f"{emoji.PLAY_BUTTON} **DANH SÁCH**:\n" + "\n".join([
+                f"**{i}**. **🎸{x[1]}**\n   👤**Yêu cầu bởi: ** {x[4]}\n"
                 for i, x in enumerate(playlist)
             ])
         if msg.get('playlist') is not None:
