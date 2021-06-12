@@ -50,7 +50,7 @@ bot.send(
         commands=[
             types.BotCommand(
                 command="start",
-                description="Check if bot alive"
+                description="Kiểm tra xem bot còn sống không"
             ),
             types.BotCommand(
                 command="help",
